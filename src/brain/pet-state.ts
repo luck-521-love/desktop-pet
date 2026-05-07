@@ -1,0 +1,11 @@
+export type PetState =
+  | 'idle_breathe'
+  | 'sleeping'
+  | 'coding_focus'
+  | 'coding_struggle'
+  | 'gaming_hype'
+  | 'meeting_nervous'
+  | 'video_watching'
+  | 'browsing_scroll'
+  | 'writing_flow'
+  | 'wakeup'
