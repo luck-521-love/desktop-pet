@@ -35,16 +35,27 @@ const APP_MAP: Record<string, AppCategory> = {
   'Discord': 'meeting',
   'Lark': 'meeting',
   'DingTalk': 'meeting',
-  'QQ': 'meeting',
+  'TencentMeeting': 'meeting',
+  'WeMeet': 'meeting',
   'IINA': 'video',
   'VLC': 'video',
   'QuickTime Player': 'video',
   'MPV': 'video',
   'bilibili': 'video',
+  '哔哩哔哩': 'video',
+  'Bilibili': 'video',
   'qqlive': 'video',
+  '腾讯视频': 'video',
+  'QQLive': 'video',
   'iqiyi': 'video',
+  '爱奇艺': 'video',
+  'iQIYI': 'video',
   'youku': 'video',
+  '优酷': 'video',
+  'Youku': 'video',
   'mgtv': 'video',
+  '芒果TV': 'video',
+  'MangoTV': 'video',
   'Notion': 'writing',
   'Obsidian': 'writing',
   'Word': 'writing',
@@ -56,6 +67,7 @@ const APP_MAP: Record<string, AppCategory> = {
   'Microsoft Edge': 'browsing',
   'Brave': 'browsing',
   'Opera': 'browsing',
+	'QQ': 'idle',
   'Finder': 'idle',
 }
 
@@ -81,7 +93,7 @@ export function detectCategory(appName: string, windowTitle: string): AppCategor
   // Try partial match
   for (const [mappedName, category] of Object.entries(APP_MAP)) {
     if (appName.toLowerCase().includes(mappedName.toLowerCase()) ||
-        mappedName.toLowerCase().includes(appName.toLowerCase())) {
+      mappedName.toLowerCase().includes(appName.toLowerCase())) {
       return category
     }
   }

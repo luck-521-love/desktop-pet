@@ -42,6 +42,7 @@ export function createPetWindow(): BrowserWindow {
   }
 
   win.show()
+  win.setAlwaysOnTop(true, 'screen-saver')
   return win
 }
 

@@ -21,8 +21,8 @@ export function localDecide(ctx: PetContext): PetState | null {
     return 'wakeup'
   }
 
-  // Over 1 min idle → sleep
-  if (ctx.idleSeconds > 60) {
+  // Over 1 min idle → sleep (passive activities like video are exempt)
+  if (ctx.idleSeconds > 60 && (!ctx.category || ctx.category === 'idle')) {
     return 'sleeping'
   }
 
